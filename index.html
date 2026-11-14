@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taha Ahmed Khan | Civil Engineer, M.Sc. TUM</title>
+<meta name="description" content="Portfolio of Taha Ahmed Khan, civil engineer and M.Sc. student at the Technical University of Munich: site quality, BIM, cost planning and computational design.">
+<style>
+  :root{
+    --ink:#14202b; --muted:#5a6773; --line:#dde3e8; --bg:#f6f7f8; --card:#ffffff;
+    --navy:#12263a; --navy2:#1c3954; --accent:#e0a526; --accent-ink:#7a5600;
+    --radius:14px; --max:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16.5px}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header.top{position:sticky;top:0;z-index:20;background:rgba(18,38,58,.96);backdrop-filter:blur(6px);color:#fff}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  header.top .brand{font-weight:700;letter-spacing:.06em;text-decoration:none}
+  header.top nav a{color:#d6e0ea;text-decoration:none;margin-left:22px;font-size:15px}
+  header.top nav a:hover{color:#fff}
+  .hero{background:linear-gradient(120deg,var(--navy) 0%,var(--navy2) 60%,#27506f 100%);color:#fff;padding:84px 0 70px;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+  .hero .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+  .hero h1{font-size:52px;line-height:1.05;margin:0 0 16px;letter-spacing:-.01em}
+  .hero p.lead{font-size:19px;color:#d9e3ec;max-width:560px;margin:0 0 28px}
+  .btns a{display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;font-size:15px}
+  .btn-primary{background:var(--accent);color:#1d1400}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+  .hero figure{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .hero figure img{display:block;width:100%;height:auto}
+  .hero figcaption{font-size:12.5px;color:#b9c7d4;background:rgba(0,0,0,.25);padding:8px 12px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-34px;position:relative;z-index:2}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:0 8px 24px rgba(20,32,43,.06)}
+  .stat b{display:block;font-size:30px;color:var(--navy);line-height:1.1}
+  .stat span{color:var(--muted);font-size:14.5px}
+  section{padding:72px 0 8px}
+  h2{font-size:32px;margin:0 0 8px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 30px;max-width:760px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .xp-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .xp-head h3{margin:0;font-size:21px}
+  .meta{color:var(--muted);font-size:14.5px}
+  ul.clean{padding-left:20px;margin:14px 0 0}
+  ul.clean li{margin:6px 0}
+  table.projects{width:100%;border-collapse:collapse;margin-top:20px;font-size:15px}
+  table.projects th,table.projects td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.projects th{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .tag{display:inline-block;font-size:12.5px;padding:3px 10px;border-radius:999px;background:#eef2f5;color:#33424f;margin:3px 6px 3px 0}
+  .tag.gold{background:#fff4d9;color:var(--accent-ink)}
+  .case{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;margin-bottom:34px}
+  .case.flip .media{order:2}
+  .case h3{font-size:24px;margin:4px 0 6px}
+  .case .media{display:grid;gap:12px}
+  .case .media img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#fff}
+  .case .media .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .case .cap{font-size:12.5px;color:var(--muted);margin-top:-6px}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+  .kpi{background:#f3f6f8;border-radius:10px;padding:12px 14px}
+  .kpi b{display:block;font-size:22px;color:var(--navy)}
+  .kpi span{font-size:13px;color:var(--muted)}
+  details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  summary{cursor:pointer;font-weight:600;color:var(--navy2)}
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .skills h4{margin:0 0 8px;font-size:16px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .small-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  footer{margin-top:80px;background:var(--navy);color:#cfdae4;padding:46px 0}
+  footer h2{color:#fff}
+  footer a{color:#fff}
+  @media (max-width:880px){
+    .hero .grid,.case,.two,.small-cards{grid-template-columns:1fr}
+    .case.flip .media{order:0}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .skills{grid-template-columns:1fr}
+    .hero h1{font-size:40px}
+    header.top nav{display:none}
+    table.projects .hide-sm{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">TAHA AHMED KHAN</a>
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Civil Engineer | M.Sc. Student, TU Munich</span>
+      <h1>From site inspection to computational design.</h1>
+      <p class="lead">Three years planning, checking and coordinating reinforced concrete and steel buildings in Karachi, now an M.Sc. Civil Engineering student at the Technical University of Munich working on BIM, sustainability analysis and 3D-printed concrete.</p>
+      <div class="btns">
+        <a class="btn-primary" href="#projects">See projects</a>
+        <a class="btn-ghost" href="https://www.linkedin.com/in/tahaahmed693" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn-ghost" href="mailto:tahaahmedkhan705@gmail.com">Email</a>
+      </div>
+    </div>
+    <figure>
+      <img src="assets/bim-exterior.jpg" alt="Revit render of the TUM Aquatic Center design">
+      <figcaption>TUM Aquatic Center, BIM project (Group 2, TUM)</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>15</b><span>building projects at Consult-Tech</span></div>
+    <div class="stat"><b>370,000+ m²</b><span>floor area across those projects</span></div>
+    <div class="stat"><b>3 years</b><span>structural, planning and site work</span></div>
+    <div class="stat"><b>1.9</b><span>M.Sc. GPA at TUM (German scale)</span></div>
+  </div>
+</div>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="sub">Planning, design and site coordination for residential, institutional and industrial clients.</p>
+    <div class="card">
+      <div class="xp-head">
+        <h3>Structural &amp; Planning Engineer (Planning and Coordination), Consult-Tech</h3>
+        <span class="meta">Karachi, Pakistan | 11/2020 - 09/2023</span>
+      </div>
+      <ul class="clean">
+        <li>Site inspections of reinforced concrete and structural steel works on 5 projects, checked against approved drawings and specifications, with deviations followed up with contractors.</li>
+        <li>Bills of Quantities and engineer's estimates for 14 projects, and complete tender documents (legal part, specifications, BOQ, estimate) for institutional clients.</li>
+        <li>Structural analysis and design of RC buildings up to basement plus 18 storeys in CSI ETABS and SAFE, plus retrofit details for damaged existing structures.</li>
+        <li>Day-to-day coordination with clients, architects, vendors and contractors; recognised by the Managing Director for delivering targets ahead of schedule.</li>
+      </ul>
+      <table class="projects">
+        <thead><tr><th>Project</th><th>Scope</th><th class="hide-sm">My role</th></tr></thead>
+        <tbody>
+          <tr><td>Creek Marina Residential Complex, DHA Karachi</td><td>5 high-rise towers, podium, club house, double basement, about 316,000 m²</td><td class="hide-sm">Coordination, site inspection, BOQ and estimate, structural design</td></tr>
+          <tr><td>The Citizens Foundation Schools</td><td>14 schools in Sindh and Punjab</td><td class="hide-sm">Structural design, coordination, BOQ</td></tr>
+          <tr><td>Casa De Royale, Bahria Town</td><td>Basement + ground + 18 storeys, about 11,700 m²</td><td class="hide-sm">Structural design, coordination, BOQ</td></tr>
+          <tr><td>Sky Line Towers, Karachi (AKICT)</td><td>Ground + 16 storeys, about 17,200 m²</td><td class="hide-sm">Coordination, BOQ, estimate, tender documents</td></tr>
+          <tr><td>Unilever PC Factory, Rahim Yar Khan</td><td>Renovation and retrofitting of an industrial building</td><td class="hide-sm">Structural design, coordination, BOQ and estimate</td></tr>
+          <tr><td>PIA Precision Engineering Complex, Karachi Airport</td><td>Structural steel hangar and 6 RC offices</td><td class="hide-sm">Structural design, coordination, BOQ, site inspection</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <p class="sub">Academic work at TUM and NED University, with the numbers behind each result.</p>
+
+    <div class="case">
+      <div>
+        <span class="tag gold">M.Sc. Thesis, ongoing</span><span class="tag">Rhino 8</span><span class="tag">Grasshopper</span><span class="tag">Karamba3D</span><span class="tag">Kangaroo2</span><span class="tag">KUKA|prc</span>
+        <h3>Stress-line based design of 3D-printed concrete slabs</h3>
+        <p>Printed mortar is strong in compression but weak in tension and at its layer joints. The thesis uses principal stress lines to shape the element, place material where it is needed and plan the robot's print path, starting with a 2 x 2 m slab.</p>
+        <div class="kpis">
+          <div class="kpi"><b>±2.5%</b><span>model error against 10 textbook checks</span></div>
+          <div class="kpi"><b>-61%</b><span>mass of the form-found vault vs flat slab</span></div>
+          <div class="kpi"><b>-84%</b><span>deflection of the vault vs flat slab</span></div>
+        </div>
+        <details>
+          <summary>How I checked my own results</summary>
+          <p>An optimisation run reported layouts stiffer than a solid plate of full depth, which is physically impossible. I traced the cause to how the software counted removed elements, corrected the setup and re-ran every layout. Continuous ribs along the stress lines turned out to be the best flat-slab solution. I also built a small script that keeps stress lines evenly spaced at 0.15 m, and checked robot reach for 20 print paths, which showed the slab must be printed in segments.</p>
+        </details>
+      </div>
+      <div class="media">
+        <img style="max-height:380px;object-fit:contain" src="assets/thesis-stress-lines.jpg" alt="Principal stress lines of a slab supported on four edges">
+        <div class="cap">Principal stress lines of the slab on four edges.</div>
+        <img src="assets/thesis-forms.jpg" alt="Vault and barrel forms studied in the thesis">
+      </div>
+    </div>
+
+    <div class="case flip">
+      <div class="media">
+        <img src="assets/bim-poolhall.jpg" alt="Interior render of the pool hall">
+        <div class="pair">
+          <img src="assets/bim-sunpath.jpg" alt="Annual sun path study in Revit">
+          <img src="assets/bim-daylight.jpg" alt="Daylight factor map">
+        </div>
+        <div class="cap">Pool hall render (team), annual sun path study and daylight factor map (my analyses).</div>
+      </div>
+      <div>
+        <span class="tag gold">BIM Project, TUM</span><span class="tag">Revit</span><span class="tag">Autodesk Insight</span><span class="tag">One Click LCA</span><span class="tag">BIM 360</span><span class="tag">Solibri</span>
+        <h3>TUM Aquatic Center: 7,000 m² sports building</h3>
+        <p>Team of 4 designing an aquatic center with competition, training and leisure pools under a wide-span roof. I led the sustainability chapters: energy, daylight, solar and life-cycle assessment.</p>
+        <div class="kpis">
+          <div class="kpi"><b>-19%</b><span>energy use, 515 to 417 kWh/m² per year</span></div>
+          <div class="kpi"><b>1.7 to 8.7%</b><span>daylight factor on level 1</span></div>
+          <div class="kpi"><b>525,500 kWh</b><span>PV yield per year on 35% of the roof</span></div>
+        </div>
+        <details>
+          <summary>What I did</summary>
+          <p>Whole-year solar study in Revit with the project's real location, an annual PV energy study, daylight factor, spatial daylight autonomy and LEED v4 daylight checks, and an energy model in Autodesk Insight that stayed below the ASHRAE 90.1 baseline. Added skylights and reduced the roof projection to bring every floor above a 2% daylight factor. Ran a 50-year life-cycle assessment in One Click LCA with German ÖKOBAUDAT data. The team exchanged models in BIM 360, checked them in Solibri and produced a model-based bill of quantities.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="small-cards">
+      <div class="card">
+        <span class="tag gold">Software Lab, TUM, 2024</span><span class="tag">IfcOpenShell</span><span class="tag">Neo4j</span>
+        <h3>Building digital twin with labelled property graphs</h3>
+        <p>Team of 4 turning IFC building models into a graph that can be searched and analysed. I designed the graph meta-model, which links project, building, storey and space data, and the testing and evaluation plan. The pipeline parses IFC files with IfcOpenShell into JSON and GraphML for queries in Neo4j with Cypher.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">B.E. Thesis, NED University, 2020</span><span class="tag">Lab testing</span><span class="tag">ACI 318</span>
+        <h3>CFRP strengthening of RC beams with recycled aggregate</h3>
+        <p>Cast and load-tested 11 reinforced concrete beams and 33 cylinders. Externally bonded CFRP raised the capacity of shear-deficient beams by up to 18% and matched beams with stirrups; recycled aggregate concrete behaved similarly to natural aggregate concrete.</p>
+        <div class="two" style="margin-top:12px">
+          <img src="assets/fyp-beam-test.jpg" alt="Beam after load test" style="width:100%;border-radius:10px">
+          <img src="assets/fyp-cylinder-test.jpg" alt="Concrete cylinder compression test" style="width:100%;border-radius:10px;max-height:260px;object-fit:cover">
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag gold">Seminar Paper, TUM, 2024</span><span class="tag">Urban sustainability</span>
+        <h3>Sustainable district N12 Eggarten, Munich</h3>
+        <p>Team of 8. I wrote the well-being and quality-of-life strategy with 20 actions, from KfW 55 building standards and PV on all blocks to mobility hubs, shared common rooms and active ground floors, and co-wrote the vision, SWOT analysis and conclusion.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Seminar Paper, TUM, 2024</span><span class="tag">Real estate</span>
+        <h3>Physical climate risks in real estate valuation</h3>
+        <p>Team of 5 analysing how floods and extreme weather affect property values and insurance premiums in Germany, with recommendations for risk-based valuation by investors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="sub">Tools I have used on real projects or in graded university work.</p>
+    <div class="skills">
+      <div class="card"><h4>BIM and CAD</h4><span class="tag">Autodesk Revit</span><span class="tag">AutoCAD</span><span class="tag">BIM 360</span><span class="tag">Solibri Office</span><span class="tag">Rhino 8</span><span class="tag">Grasshopper</span></div>
+      <div class="card"><h4>Structural analysis</h4><span class="tag">CSI ETABS</span><span class="tag">CSI SAFE</span><span class="tag">SOFiSTiK</span><span class="tag">Robot Structural Analysis</span><span class="tag">Karamba3D</span><span class="tag">Kangaroo2</span></div>
+      <div class="card"><h4>Planning and quality</h4><span class="tag">Site inspection</span><span class="tag">Bills of Quantities</span><span class="tag">Tender documents</span><span class="tag">Cost estimates</span><span class="tag">Value engineering</span><span class="tag">Contractor coordination</span></div>
+      <div class="card"><h4>Sustainability</h4><span class="tag">Autodesk Insight</span><span class="tag">One Click LCA</span><span class="tag">ÖKOBAUDAT</span><span class="tag">LEED v4 daylight</span></div>
+      <div class="card"><h4>Data and digital</h4><span class="tag">IfcOpenShell</span><span class="tag">Neo4j and Cypher</span><span class="tag">MS Excel</span><span class="tag">KUKA|prc</span></div>
+      <div class="card"><h4>Codes and languages</h4><span class="tag">Eurocodes (DIN EN 1990, 1991, 1997)</span><span class="tag">ACI 318</span><span class="tag">English, fluent</span><span class="tag">German, A2</span><span class="tag">Urdu, native</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education and certifications</h2>
+    <div class="two">
+      <div class="card">
+        <h3 style="margin:0">M.Sc. Civil Engineering, Technical University of Munich</h3>
+        <div class="meta">10/2023 - 09/2027 (expected) | GPA 1.9</div>
+        <p>Focus: Computational Modeling and Simulation, Energy-Efficient and Sustainable Building, Real Estate Development, Transportation Systems. Deutschlandstipendium scholarship holder.</p>
+        <h3 style="margin:18px 0 0">B.E. Civil Engineering, NED University of Engineering and Technology</h3>
+        <div class="meta">12/2016 - 10/2020 | Final grade 1.1 (German equivalent)</div>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Certifications and awards</h4>
+        <ul class="clean" style="margin-top:0">
+          <li>Deutschlandstipendium scholarship, Technical University of Munich</li>
+          <li>Registered Engineer, Pakistan Engineering Council (PEC)</li>
+          <li>Engineering Project Management Specialization, Rice University (Coursera), 2020</li>
+          <li>Supply Chain Analytics (SC0x), MITx on edX, 2025</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Open to a 6-month full-time internship from December 2026 in construction quality, planning or project coordination.</p>
+    <p><a href="mailto:tahaahmedkhan705@gmail.com">tahaahmedkhan705@gmail.com</a> | <a href="https://www.linkedin.com/in/tahaahmed693" target="_blank" rel="noopener">linkedin.com/in/tahaahmed693</a> | Munich, Germany</p>
+    <p class="meta" style="color:#93a6b8;margin-top:26px">Project images: TUM BIM.project Group 2 (Chair of Computational Modeling and Simulation, Chair of Architectural Informatics), my M.Sc. thesis and my NED University final year project.</p>
+  </div>
+</footer>
+
+</body>
+</html>
